@@ -9,7 +9,7 @@ body {
 .background {
     height: 100vh;
     font-weight: 100;
-    background: radial-gradient(#a23982,#1f1013);
+    background: radial-gradient(#76b1fe,#aaaaaa);
     -webkit-overflow-Y: hidden;
     -moz-overflow-Y: hidden;
     -o-overflow-Y: hidden;
@@ -291,7 +291,7 @@ nav a:focus {
 	left: 25%;
 	width: 50%;
 	height: 2px;
-	background: #a23982;;
+	background: #014db1;
 	content: '';
 	opacity: 0;
 	transition: opacity 0.3s, transform 0.3s, width 0.1s, left 0.1s;
@@ -310,7 +310,7 @@ nav a:focus {
 
 .fancy a:hover,
 .fancy a:focus {
-	color: #a23982;
+	color: #014db1;
 }
 
 .fancy a:hover::before,
