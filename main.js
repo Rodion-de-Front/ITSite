@@ -19,10 +19,8 @@ const elts = {
 };
 
 const texts = [
-    "WELCOME",
-    "IS IT COOL?",
-    "FUTURE IS NEAR",
-    ":)"
+    "outsourcing",
+    "outstaffing"
 ];
 
 const morphTime = 1;
@@ -94,3 +92,72 @@ function animate() {
 }
 
 animate();
+
+window.addEventListener('DOMContentLoaded', function() {
+  let aboutBlock = document.getElementById('About');
+  let servicesBlock = document.getElementById('Services');
+  let animatedText = document.getElementById('animated-text');
+
+  function checkScrollPosition() {
+    let aboutBlockPosition = aboutBlock.getBoundingClientRect().top;
+    let servicesBlockPosition = servicesBlock.getBoundingClientRect().top;
+    let screenPosition = window.innerHeight / 2;
+
+    if (aboutBlockPosition < screenPosition) {
+      aboutBlock.classList.add('show');
+      animatedText.classList.add('show');
+    } else {
+      aboutBlock.classList.remove('show');
+      animatedText.classList.remove('show');
+    }
+
+    if (servicesBlockPosition < screenPosition) {
+      servicesBlock.classList.add('show');
+    } else {
+      servicesBlock.classList.remove('show');
+    }
+  }
+
+  window.addEventListener('scroll', checkScrollPosition);
+});
+
+
+window.addEventListener('scroll', function () {
+
+    let posTop = window.pageYOffset;
+
+    if (posTop == 0) {
+
+        document.querySelector(".menu").style.backgroundColor = "transparent";
+        let elems = document.getElementsByClassName("option")
+        for (let i = 0; i < elems.length; i++) {
+            elems[i].style.color = "white";
+
+            elems[i].addEventListener("mouseenter", function() {
+                elems[i].style.color = "#014db1";
+            });
+
+            elems[i].addEventListener("mouseleave", function() {
+                elems[i].style.color = "white";
+            });
+        }
+
+    } else {
+        document.querySelector(".menu").style.backgroundColor = "white";
+        let elems = document.getElementsByClassName("option")
+        for (let i = 0; i < elems.length; i++) {
+            elems[i].style.color = "black";
+
+            elems[i].addEventListener("mouseenter", function() {
+                elems[i].style.color = "#014db1";
+            });
+
+            elems[i].addEventListener("mouseleave", function() {
+                elems[i].style.color = "black";
+            });
+        }
+
+    }
+
+
+});

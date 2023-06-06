@@ -4,11 +4,15 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .background {
     height: 100vh;
-    font-weight: 100;
     background: radial-gradient(#76b1fe,#aaaaaa);
     -webkit-overflow-Y: hidden;
     -moz-overflow-Y: hidden;
@@ -246,10 +250,20 @@ body {
   100%{opacity: 1;}
 }
 
-.menu{
+.menu {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    align-items: center;
+    transition: 0.4s;
+    width: 100vw;
+    height: 100px;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    z-index: 20;
 }
 
 nav a {
@@ -260,8 +274,7 @@ nav a {
 	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
-	font-weight: 300;
-	font-size: 25px;
+	font-size: 18px;
 }
 
 nav a:hover,
@@ -271,8 +284,11 @@ nav a:focus {
 
 .fancy {
   box-sizing: border-box;
-  padding-bottom: 20px;
   border-bottom: 2px solid white;
+}
+
+.l {
+  height: 100vh;
 }
 
 .fancy a {
@@ -344,14 +360,25 @@ nav a:focus {
     margin: auto;
 } */
 
+.main-content {
+  position: absolute;
+  margin: auto;
+  width: 100vw;
+  height: 80pt;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
 #container {
-    position: absolute;
-    margin: auto;
-    width: 100vw;
     height: 80pt;
-    top: 0;
-    bottom: 0;
     filter: url(#threshold) blur(0.6px);
+}
+
+.untach-text {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 600;
 }
 
 #text1,
@@ -360,8 +387,167 @@ nav a:focus {
     width: 100%;
     display: inline-block;
     color: white;
-    font-family: "Raleway", sans-serif;
-    font-size: 76px;
     text-align: center;
     user-select: none;
+}
+
+.name-company {
+  font-size: 66px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.description-company {
+    font-size: 46px;
+    font-weight: 300;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.about-block {
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 80vh;
+}
+
+
+.about-block.show {
+  opacity: 1;
+}
+
+.about-pic {
+  display: block;
+  margin-bottom: 80px;
+}
+
+.about-pic img {
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  display: block;
+  color: #014db1;
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  display: block;
+  opacity: 0;
+  transition: opacity 1s ease;
+  transition-delay: 0.5s;
+  font-size: 18px;
+  line-height: 31px;
+  font-weight: 400;
+  color: #777777;
+  max-width: 900px;
+}
+
+.about-text.show {
+  opacity: 1;
+}
+
+.services-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.services-text {
+  width: 500px;
+  height: 524px;
+  margin-right: 50px;
+}
+
+.subject {
+  font-size: 28px;
+  color: #6e6e6e;
+  font-weight: 400;
+  margin-bottom: 15px;
+  margin-top: 20px;;
+}
+
+.subject-description {
+  font-size: 18px;
+  line-height: 30px;
+  color: #777777;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #b7b7b7;
+}
+
+.services-pic img {
+  width: 624px;
+  height: 624px;
+  border-radius: 8px;
+}
+
+.projects-block {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  height: 300px;
+  width: 1000px;
+  display: flex;
+}
+
+.card {
+  display: flex;
+  height: 350px;
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.card-title {
+  color: #014db1;
+  font-weight: 400;
+  font-size: 28px;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.bar {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 550px;
 }

@@ -10,21 +10,28 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
 </head>
 <body>
-    <div class="background">
+    <div id="Home" class="background">
         <div class="menu">
             <nav class="fancy">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Projects</a>
-                <a href="#">Clients</a>
-                <a href="#">Blog</a>
-                <a href="#">Contact Us</a>
+                <a class="option" href="#Home">Home</a>
+                <a class="option" href="#About">About</a>
+                <a class="option" href="#Services">Services</a>
+                <a class="option" href="#Projects">Projects</a>
+                <a class="option" href="#">Blog</a>
+                <a class="option" href="#">Contact Us</a>
             </nav>
         </div>
-        <div id="container">
-            <span id="text1"></span>
-            <span id="text2"></span>
+        <div class="main-content">
+            <div class="name-company">
+                DataWare
+            </div>
+            <div class="description-company">
+                <div id="container">
+                    <div class="untach-text">IT</div>
+                    <div id="text1"></div>
+                    <div id="text2"></div>
+                </div>
+            </div>
         </div>
         <svg id="filters">
             <defs>
@@ -45,6 +52,81 @@
         <div class='light x7'></div>
         <div class='light x8'></div>
         <div class='light x9'></div>
+    </div>
+    <div id="About" class="about-block">
+        <div class="about-pic">
+            <img src="img/about.png"/>
+        </div>
+        <div class="title">
+            What is DataWare about?
+        </div>
+        <div id="animated-text" class="about-text">
+            Polyhedra Network is building the next generation of infrastructure for Web3 interoperability, scalability, and privacy through advanced Zero-knowledge proof (ZKP) technology. Polyhedra Network provides trustless and highly-efficient interoperability solutions for asset transfers, message passing, and data sharing between various Web2 and Web3 systems.
+        </div>
+    </div>
+    <div id="Services" class="services-block">
+        <div class="services-text">
+            <div class="title">
+                Unforgetable services
+            </div>
+            <div class="info-container">
+                <div class="subject">
+                    Interoperability
+                </div>
+                <div class="subject-description">
+                    Polyhedra Network implements infrastructures for Web3 interoperability across heterogeneous systems which guarantee strong security without extra trust assumptions.
+                </div>
+                <div class="subject">
+                    Scalability
+                </div>
+                <div class="subject-description">
+                    Polyhedra Network designs and develops scalable and efficient zero-knowledge proof protocols for large-scale ZKP systems with distributed computing networks.
+                </div>
+                <div class="subject">
+                    Fine-grained Privacy
+                </div>
+                <div class="subject-description">
+                    Polyhedra Network provides fine-grained privacy extensions for Web3 with stealth address models, meeting both privacy-preserving needs and compliance policies.
+                </div>
+            </div>
+        </div>
+        <div class="services-pic">
+            <img src="img/info.jpg"/>
+        </div>
+    </div>
+    <div id="Projects" class="projects-block">
+        <div class="title">
+            Projects
+        </div>
+        <div class="container">
+            <div class="card">
+              <h3 class="card-title">Card 1</h3>
+              <div class="bar">
+                <div class="card-content">sfsfsefsf</div>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Card 2</h3>
+              <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Card 3</h3>
+              <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Card 4</h3>
+              <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+              </div>
+            </div>
+          </div>
     </div>
 </body>
 </html>
