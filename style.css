@@ -409,6 +409,7 @@ nav a:focus {
 }
 
 .about-block {
+  margin-top: 100px;
   opacity: 0;
   transition: opacity 1s ease;
   display: flex;
@@ -416,7 +417,6 @@ nav a:focus {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  height: 80vh;
 }
 
 
@@ -459,6 +459,7 @@ nav a:focus {
 }
 
 .services-block {
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -467,7 +468,6 @@ nav a:focus {
 
 .services-text {
   width: 500px;
-  height: 524px;
   margin-right: 50px;
 }
 
