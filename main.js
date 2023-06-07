@@ -172,14 +172,62 @@ function toggleMenu() {
 
 if (window.innerWidth < 800) {
     document.querySelector('#navigation').innerHTML = `
-                                    <img id="lines" src="img/lines.png" onclick="toggleMenu()">
-                                    <div id="sidebar">
-                                        <strong><a class="nav-item" href="#Home">HOME</a></strong>
-                                        <strong><a class="nav-item" href="#About">ABOUT</a></strong>
-                                        <strong><a class="nav-item" href="#Services">SERVICES</a></strong>
-                                        <strong><a class="nav-item" href="#Projects">PROJECTS</a></strong>
-                                        <strong><a class="nav-item" href="#Partners">PARTNERS</a></strong>
-                                        <strong><a class="nav-item" href="#Contact">CONTACT US</a></strong>
-                                        </div>
-                                    </div>`
-  }
+        <img id="lines" src="img/lines.png" onclick="toggleMenu()">
+        <div id="sidebar">
+            <strong><a class="nav-item" href="#Home">HOME</a></strong>
+            <strong><a class="nav-item" href="#About">ABOUT</a></strong>
+            <strong><a class="nav-item" href="#Services">SERVICES</a></strong>
+            <strong><a class="nav-item" href="#Projects">PROJECTS</a></strong>
+            <strong><a class="nav-item" href="#Partners">PARTNERS</a></strong>
+            <strong><a class="nav-item" href="#Contact">CONTACT US</a></strong>
+        </div>`;
+}
+
+
+const upBtn = document.querySelector('.up-button')
+const downBtn = document.querySelector('.down-button')
+const sidebar = document.querySelector('.sidebar')
+const container = document.querySelector('.container')
+const mainSlide = document.querySelector('.main-slide')
+const slidesCount=mainSlide.querySelectorAll('div').length
+
+let activeSlideIndex =0
+
+sidebar.style.top = `-${(slidesCount - 1)* 100 }vh`
+
+upBtn.addEventListener('click', () => {
+    changeSlide('up')
+})
+
+downBtn.addEventListener('click', () => {
+    changeSlide('down')
+})
+
+document.addEventListener('keydown', event =>{
+  if (event.key==='ArrowUp'){
+    changeSlide('up')
+  } else if (event.key==='ArrowDown')
+    changeSlide('down')
+})
+
+
+function changeSlide(direction) {
+    if (direction === 'up') {
+        activeSlideIndex++
+        if (activeSlideIndex === slidesCount){
+            activeSlideIndex=0
+        }        
+    }
+    else if (direction === 'down') {
+        activeSlideIndex--
+        if (activeSlideIndex <0) {
+            activeSlideIndex = slidesCount -1
+        }
+    }
+
+    const height = container.clientHeight
+
+    mainSlide.style.transform =`translateY(-${activeSlideIndex*height}px)`
+
+    sidebar.style.transform =`translateY(${activeSlideIndex*height}px)`
+}
