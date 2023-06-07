@@ -880,4 +880,8 @@ nav a:focus {
   .card {
     width: 300px;
   }
+
+  .description-company {
+    font-size: 36px;
+  }
 }
