@@ -161,3 +161,25 @@ window.addEventListener('scroll', function () {
 
 
 });
+
+//функция чтобы открыть и спрятать меню
+function toggleMenu() {
+
+    document.getElementById('sidebar').classList.toggle('sidebar-active')
+    document.getElementById('lines').classList.toggle('lines-active');
+    document.querySelector('body').classList.toggle('opacity');
+}
+
+if (window.innerWidth < 800) {
+    document.querySelector('#navigation').innerHTML = `
+                                    <img id="lines" src="img/lines.png" onclick="toggleMenu()">
+                                    <div id="sidebar">
+                                        <strong><a class="nav-item" href="#Home">HOME</a></strong>
+                                        <strong><a class="nav-item" href="#About">ABOUT</a></strong>
+                                        <strong><a class="nav-item" href="#Services">SERVICES</a></strong>
+                                        <strong><a class="nav-item" href="#Projects">PROJECTS</a></strong>
+                                        <strong><a class="nav-item" href="#Partners">PARTNERS</a></strong>
+                                        <strong><a class="nav-item" href="#Contact">CONTACT US</a></strong>
+                                        </div>
+                                    </div>`
+  }
